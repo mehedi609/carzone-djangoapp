@@ -1,0 +1,11 @@
+*install vertual env -> 
+1. pip install virtualenv
+2. python -m venv venv
+
+*activate the virtualenv -> venv\Scripts\activate.bat
+
+*install the django -> pip install django==3.0.7
+
+*create a django project -> django-admin startproject carzone .
+
+*run server => python manage.py runserver
