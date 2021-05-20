@@ -35,3 +35,6 @@ _**migration commands**_
 _**create superuser**_
 1. `python manage.py createsuperuser`
 * give username, email, and password. you can bypass the security if you want
+
+_**install Pillow package for image**_
+1. `pip install Pillow`
