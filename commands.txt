@@ -9,3 +9,7 @@
 *create a django project -> django-admin startproject carzone .
 
 *run server => python manage.py runserver
+
+*create new app => 
+python manage.py startapp app-name
+ex. python manage.py startapp pages
