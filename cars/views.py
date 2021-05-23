@@ -8,7 +8,7 @@ from cars.models import Car
 
 def cars(request):
     _cars = Car.objects.order_by('-created_date')
-    paginator = Paginator(_cars, 1)
+    paginator = Paginator(_cars, 4)
     page = request.GET.get('page')
     paged_cars = paginator.get_page(page)
 
@@ -30,4 +30,15 @@ def car_detail(request, _id):
 
 
 def search(request):
-    return 'search'
+    _cars = Car.objects.order_by('-created_date')
+
+    if 'keyword' in request.GET:
+        keyword = request.GET['keyword']
+        if keyword:
+            _cars = _cars.filter(description__icontains=keyword)
+
+    data = {
+        'cars': _cars,
+    }
+
+    return render(request, 'cars/search.html', data)
