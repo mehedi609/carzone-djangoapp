@@ -2,17 +2,20 @@
 <header class="top-header th-2 top-header-bg">
   <div class="container">
     <div class="row">
-      <div class="col-lg-8 col-md-8 col-sm-7">
+      <div class="col-lg-6 col-md-6 col-sm-7">
         <div class="list-inline">
           <a href="tel:+55-4XX-634-7071"><i class="fa fa-phone"></i>+880 1752-489818</a>
           <a href="tel:info@themevessel.com"><i class="fa fa-envelope"></i>contact@carzone.com</a>
           <a href="tel:info@themevessel.com"><i class="fa fa-clock-o"></i>Mon - Sun: 8:00am - 6:00pm</a>
         </div>
       </div>
-      <div class="col-lg-4 col-md-4 col-sm-5">
+      <div class="col-lg-6 col-md-6 col-sm-5">
         <ul class="top-social-media pull-right">
 
           {% if user.is_authenticated %}
+            <li>
+              Welcome <b style="color: red">{{ user.first_name }} {{ user.last_name }}</b>
+            </li>
             <li>
               <a href="{% url 'dashboard' %}" class="sign-in">
                 <i class="fa fa-tachometer"></i> Dashboard
