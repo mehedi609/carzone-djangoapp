@@ -8,6 +8,9 @@ def login(request):
 
 
 def register(request):
+    if request.method == 'POST':
+        print('This is post method from register function')
+
     return render(request, 'accounts/register.html')
 
 
