@@ -14,7 +14,7 @@
 
           {% if user.is_authenticated %}
             <li>
-              Welcome <b style="color: red">{{ user.first_name }} {{ user.last_name }}</b>
+              Welcome <b style="color: #F0151F">{{ user.first_name }} {{ user.last_name }}</b>
             </li>
             <li>
               <a href="{% url 'dashboard' %}" class="sign-in">
