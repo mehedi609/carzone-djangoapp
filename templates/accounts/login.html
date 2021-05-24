@@ -3,6 +3,8 @@
 {% block title %} | Login {% endblock %}
 {% block content %}
   {% load static %}
+  {% load socialaccount %}
+  {% providers_media_js %}
 
   <div class="sub-banner overview-bgi">
     <div class="container breadcrumb-area">
@@ -49,13 +51,13 @@
               <div class="clearfix"></div>
               <ul class="social-list">
                 <li>
-                  <a href="#!" {% comment %}href="{% provider_login_url 'facebook' method='js_sdk' %}"{% endcomment %} class="facebook-bg">
+                  <a href="{% provider_login_url 'facebook' method='oauth2' %}" class="facebook-bg">
                     <i class="fa fa-facebook facebook-i"></i>
                     <span>Facebook</span>
                   </a>
                 </li>
                 <li>
-                  <a href="#!" {% comment %}href="{% provider_login_url 'google' %}"{% endcomment %} class="google-bg">
+                  <a href="{% provider_login_url 'google' %}" class="google-bg">
                     <i class="fa fa-google google-i"></i>
                     <span>Google</span>
                   </a>

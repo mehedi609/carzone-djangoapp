@@ -50,3 +50,6 @@ _**install Pillow package for image**_ \
 
 _**install django-multiselectfield package**_ \
 `pip install django-multiselectfield`
+
+_**install django-allauth package for social login**_ \
+`pip install django-allauth`
