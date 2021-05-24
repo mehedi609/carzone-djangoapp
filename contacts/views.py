@@ -30,19 +30,21 @@ def inquiry(request):
                 )
                 return redirect('/cars/' + car_id)
 
-        contact = Contact(car_id=car_id, car_title=car_title, user_id=user_id,
-                          first_name=first_name, last_name=last_name, customer_need=customer_need, city=city,
-                          state=state, email=email, phone=phone, message=message)
+        contact = Contact(
+            car_id=car_id, car_title=car_title, user_id=user_id,
+            first_name=first_name, last_name=last_name, customer_need=customer_need,
+            city=city, state=state, email=email, phone=phone, message=message
+        )
 
-        # admin_info = User.objects.get(is_superuser=True)
-        # admin_email = admin_info.email
-        # send_mail(
-        #     'New Car Inquiry',
-        #     'You have a new inquiry for the car ' + car_title + '. Please login to your admin panel for more info.',
-        #     'rathan.kumar049@gmail.com',
-        #     [admin_email],
-        #     fail_silently=False,
-        # )
+        admin_info = User.objects.get(is_superuser=True)
+        admin_email = admin_info.email
+        send_mail(
+            'New Car Inquiry',
+            'You have a new inquiry for the car ' + car_title + '. Please login to your admin panel for more info.',
+            'rathan.kumar049@gmail.com',
+            [admin_email],
+            fail_silently=False,
+        )
 
         contact.save()
         messages.success(request, 'Your request has been submitted, we will get back to you shortly.')
